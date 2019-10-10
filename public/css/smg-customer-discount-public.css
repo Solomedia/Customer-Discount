@@ -1,0 +1,74 @@
+.smg_control_down{
+    display: none !important;
+}
+
+.smg_control_up{
+    display: block !important;
+}
+
+.smg_control {
+    font-weight: 400 !important;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-size: 14.5px;
+}
+    .smg_control input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+.smg_control_indicator {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border: 0px solid #000000;
+}
+.smg_control-radio .smg_control_indicator {
+    border-radius: undefined%;
+}
+
+.smg_control:hover input ~ .smg_control_indicator,
+.smg_control input:focus ~ .smg_control_indicator {
+    background: #cccccc;
+}
+
+.smg_control input:checked ~ .smg_control_indicator {
+    background: #2aa1c0;
+}
+.smg_control:hover input:not([disabled]):checked ~ .smg_control_indicator,
+.smg_control input:checked:focus ~ .smg_control_indicator {
+    background: #0e6647d;
+}
+.smg_control input:disabled ~ .smg_control_indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+.smg_control_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+.smg_control input:checked ~ .smg_control_indicator:after {
+    display: block;
+}
+.smg_control-checkbox .smg_control_indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 8px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.smg_control-checkbox input:disabled ~ .smg_control_indicator:after {
+    border-color: #7b7b7b;
+}
